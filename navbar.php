@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+  include 'config.php';
+  $query = "SELECT * FROM `running_text`";
+  $query = "SELECT * FROM `keuangan_masjid`";
+
+$result = mysqli_query($conn, $query);
+  ?>
   <head>
           <!-- Theme CSS -->
           <link rel="stylesheet" href="template/css/theme.css" defer>
@@ -47,7 +54,7 @@
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" crossorigin="anonymous">         
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">     
           <link rel="shortcut icon" href="img/favicon.png">
-    <title>Pengurus Masjid An-Nuur</title>
+    <title>Website Masjid An-Nuur</title>
   </head>
   <!-- Ticker -->
   <div class="bn-breaking-news header-top-ticker" id="newsTicker1">
@@ -110,19 +117,31 @@
                         </script>
                         </td> </span></li>
                         <li> || </li>
-                        <li>Saldo : 14.100.000</li>
+                        <li>
+                            <?php 
+                            while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                                echo "Rp. " . $data['masuk'] - $data['keluar'];
+                               }
+                            ?>
+                        </li>
                       </ul>
                     </div>
                   </div>
                   <div class="bn-news">
-                    <a href="login.html">
-                      <marquee> <font size="2" color="white"><p>&nbsp;Pengurus Unit Pengumpul Zakat (UPZ) Masjid Raudhatul Jannah (SK.010/KEP/Baznas-Mks/UPZ/II/2020) menerima dan menyalurkan zakat harta, profesi, infaq, shadakah, dengan rekening UPZ, Bank Mandiri :&nbsp; 174 000 267 5940 atas nama Masjid Raudhatul Jannah-UPZ. Konfirmasi pembayaran dikirimkan ke No.WA +62 821 894 16 661 (Bapak H. Sardjan, S.Pd). Telah dilengkapi fasilitas Masjid&nbsp; dengan Free Wi-Fi untuk jamaah serta penyediaan kopi dan teh panas gratis setiap jumatan dan kajian ahad.&nbsp; &nbsp;Pengurus Masjid Raudhatul Jannah GMA telah mengapplikasikan Kotak Amal via scanning barcode &quot;Link aja&quot; dan QRIS.&nbsp;Informasi Seputar kegiatan Masjid Raudhatul Jannah juga bisa diakses&nbsp;melalui Facebook Masjid Raudhatul Jannah Makassar. Untuk pemasangan iklan dalam halaman utama website ini bisa mengirimkan WA ke Nomor +6282291301588.(Bpk H.Nur Adil/Ketua Pengurus). Sehubungan dengan rencana pengembangan Masjid Raudhatul Jannah, &nbsp;donatur&nbsp;yang berkesempatan untuk berdonasi,&nbsp;silahkan melakukan transfer ke rekening Masjid Raudhatul Jannah Bank Mandiri dengan nomor rekening 174 0000 536 045 atas nama Masjid Raudhatul Jannah. Dan atas segala.bantuan para dermawan dihaturkan banyak terima kasih semoga Allah memberikan kelancaran rezeki, dimudahkan segala.urusan. Aamiin. Managemen keuangan Masjid Raudhatul Jannah telah menerapkan sistem &quot;no petty cash or No cash on hand&quot;&nbsp; (Bendahara masjid tidak menyimpan dana tunai jamaah); &nbsp;Dana tunai termasuk kotak amal jumatan yang dititipkan jamaah akan disetor ke rekening masjid pada bank Mandiri.pada hari yang sama atau pada hari kerja berikutnya bilamana hari libur. Tetap.gunakan masker dan jaga jarak aman dalam.mencegah penyebaran virus corona covid19.</p><p>&nbsp;</p></font></marquee></a>
+                    <a href="login.php">
+                      <marquee> <font size="3" color="white"><p>
+                          <?php 
+                          while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                            echo $data['text'];
+                           }
+                          ?>
+                      </p></font></marquee></a>
     </div>
   </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">
+        <a class="navbar-brand" href="home.php">
           <img src="img/Logo-Masjid.png" alt="" width="200" height="60" margin="10px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" a ria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,29 +150,29 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Beranda</a>
+              <a class="nav-link" href="home.php">Beranda</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Tentang </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a href="profil.html">Profil Masjid</a></li>
-                <li><a href="pengurus.html">Susunan Pengurus</a></li>
-                <li><a href="arsip.html">Arsip Dokumen</a></li>
-                <li><a href="kontak.html">Kontak Kami</a></li>
+                <li><a href="profil.php">Profil Masjid</a></li>
+                <li><a href="pengurus.php">Susunan Pengurus</a></li>
+                <li><a href="arsip.php">Arsip Dokumen</a></li>
+                <li><a href="kontak.php">Kontak Kami</a></li>
             </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Berita </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a href="berita.html">Berita Terkini</a></li>
-                <li><a href="pengumuman.html">Pengumuman</a></li>
+                <li><a href="berita.php">Berita Terkini</a></li>
+                <li><a href="pengumuman.php">Pengumuman</a></li>
             </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Jadwal Jumat </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a href="imam.html">Imam dan Khotib</a></li>
-                <li><a href="khutbah.html">Khutbah</a></li>
+                <li><a href="imam.php">Imam dan Khotib</a></li>
+                <li><a href="khutbah.php">Khutbah</a></li>
             </ul>
             </li>
               <li class="nav-item dropdown">
@@ -171,91 +190,19 @@
               </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="galeri.html">Galeri</a>
+                <a class="nav-link" href="galeri.php">Galeri</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="tpq.html">TPQ</a>
+                <a class="nav-link" href="tpq.php">TPQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pendaftaran.html">Pendaftaran TPQ</a>
+                <a class="nav-link" href="pendaftaran.php">Pendaftaran TPQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" href="login.php">Login</a>
               </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- Akhir Navbar -->
-
-         <!-- TPQ -->
-         <section class="pengurus">
-            <h1 style="margin-top: 50px;">SUSUNAN PENGURUS</h1>
-            <div class="row">
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-              <div class="pengurus-col">
-                <h3>PENGURUS 1</h3>
-                <img src="img/profil.png" alt="" style="height: 200px; width: 200px;">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!</p>
-              </div>
-            </div>
-         </section>
-         <!-- Footer -->
-      <footer class="footer">
-        <h1>Contact Us</h1>
-				<div class="container">
-					<div class="row">
-						<div class="col-md-3">
-								<img src="img/Logo-Masjid.png">									
-						</div>
-						<div class="col-md-6">
-							<div class="contact-details">
-								<ul class="contact">
-									<li><p><i class="fa fa-map-marker"></i> Jl. Lele 8, Mladangan, Minomartani, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581</p></li>
-									<li><p><i class="fa fa-phone"></i> <strong>Phone:</strong> +62-274-512474, +62-274-589621<!--  --></p></li>
-									<li><p><i class="fa fa-phone"></i> <strong>Fak:</strong> +62-274-586117<!--  --></p></li>
-									<li><p><i class="fa fa-envelope"></i> <strong>Email:</strong> <a href="mailto:humas@uin-suka.ac.id.com">
-                    masjidannuurminomartani@gmail.com</a></p></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.464942843155!2d110.40455121513324!3d-7.740406394420959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a596dd408265f%3A0xf395e73902d3760!2sMasjid%20An-Nuur%20Minomartani!5e0!3m2!1sid!2sid!4v1650872334732!5m2!1sid!2sid" width="75%" height="200" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-					</div>
-          <div class="icons">
-            <a href="https://www.youtube.com/channel/UCmUdDedw0ISklXr-J_4xirA"><i class="fab fa-youtube"></i></a>
-            <a href="http://instagram.com/ppalbarokah"><i class="fab fa-instagram"></i></a>
-            <a href="http://twitter.com/ppalbarokah"><i class="fab fa-twitter"></i></a>
-            <a href="https://m.facebook.com/pp.albarokah"><i class="fab fa-facebook-f"></i></a>
-          </div>
-    
-          <p>Powered by Teknik Informatika UIN Sunan Kalijaga 2022</p>
-				</div>
-			</footer>
-      

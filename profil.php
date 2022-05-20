@@ -17,12 +17,7 @@ $result = mysqli_query($conn, $query);
         </div>
         <div class="col-md-6">
           <h3>Video Profil Masjid An-Nuur Minomartani</h3>
-          <?php 
-                    while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                      echo $data['roles'];
-                     }
-          ?>
-
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus possimus voluptatum recusandae cupiditate dolorum ipsum quia consequuntur inventore, maiores magni!
         </div>
       </div>
     </div>

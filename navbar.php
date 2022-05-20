@@ -118,31 +118,24 @@ $result = mysqli_query($conn, $query);
                         </td> </span></li>
                         <li> || </li>
                         <li>
-                            <?php 
-                            while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                                echo "Rp. " . $data['masuk'] - $data['keluar'];
-                               }
-                            ?>
+                          Saldo
                         </li>
                       </ul>
                     </div>
                   </div>
                   <div class="bn-news">
-                    <a href="login.php">
+                    <a href="edit-running-text.php">
                       <marquee> <font size="3" color="white"><p>
-                          <?php 
-                          while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                            echo $data['text'];
-                           }
-                          ?>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit dolores doloribus nisi ea aut, tenetur id ex fugit quidem nesciunt minima! Quas ut obcaecati tempore!
                       </p></font></marquee></a>
+                  </div>
     </div>
   </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="home.php">
-          <img src="img/Logo-Masjid.png" alt="" width="200" height="60" margin="10px">
+        <a class="navbar-brand" href="index.php">
+          <img src="img/Logomasjid.png" alt="" width="200" height="60" margin="10px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" a ria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -150,7 +143,7 @@ $result = mysqli_query($conn, $query);
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.php">Beranda</a>
+              <a class="nav-link" href="index.php">Beranda</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Tentang </a>
@@ -175,20 +168,6 @@ $result = mysqli_query($conn, $query);
                 <li><a href="khutbah.php">Khutbah</a></li>
             </ul>
             </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Kegiatan </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/tpa">TPA</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/kajian_fiqih">Kajian Islam</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/majelis">Majelis Taklim</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/rem_masjid">Remaja Masjid</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/ramadhan">Ramadhan Spesial</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/k_anak">Kreativitas Anak</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/peray_hari_besar">Perayaan Hari Besar Agama Islam</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/kemandirian_masjid">Kemandirian Masjid</a></li>
-                  <li><a href="http://raudhatuljannah-gma.com/index.php/main/content/lain_lain">Lain-lain</a></li>
-              </ul>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="galeri.php">Galeri</a>
               </li>
@@ -206,3 +185,4 @@ $result = mysqli_query($conn, $query);
       </div>
     </nav>
     <!-- Akhir Navbar -->
+

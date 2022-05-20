@@ -12,44 +12,40 @@ $result = mysqli_query($conn, $query);
     <div class="section-title">
       <h2 style="margin-top: 30px ;">Berita Terbaru</h2>
     </div>
+    <a href="tulisberita.php" class="btn btn-utama" style="margin-bottom: 30px;">Tulis Berita</a>
 <div class="row">                                          
   <div class="col-md-12">
       <div class="row">
-            <div class="col-md-6 mr-none">
+      <div class="col-md-6 mr-none">
               <article class="post" style="text-align:justify">
-                  <div class="post-image single mb-lg">
-                    <img class="img-thumbnail">
-                    <?php 
-                      while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                        echo $data['gambar'];
-                       }
-                    ?>
-                  </div>
-                    <h4 style="margin-top: 15px;"><a href=""></a>
-                    
-                    <?php 
-                      while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                        echo $data['judul'];
-                       }
-                    ?></h4>
-                  <div class="post-meta pl-none">
-                    <span><i class="fa fa-calendar"></i>
-                    <?php 
-                      while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                        echo $data['status'];
-                       }
-                    ?></span>
-                  </div>
-                    <p>
-                    <?php 
-                      while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                        echo $data['isi'];
-                       }
-                    ?>
-                    </p>
-                      <a href="profil.html" class="btn btn-utama" style="margin-bottom: 30px;">Baca Selengkapnya</a>
+                <div class="post-image single mb-lg">
+                  <img class="img-thumbnail" src="https://uin-suka.ac.id/media/gambar/100_20220422_IMG_2267.JPG" alt="">
+                </div>                        
+                  <h4 style="margin-top: 15px;"><a>
+                  <?php 
+                    while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                      echo $data['judul'];
+                     }
+          ?>
+                  </a></h4>
+                <div class="post-meta pl-none">
+                  <i class="fa fa-calendar"></i>
+                  <?php 
+                    while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                      echo $data['status'];
+                     }
+          ?>
+                </div>
+                <a href="">
+                  <?php 
+                    while($data = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+                      echo $data['isi'];
+                     }
+          ?>
+          </a>
+                <a href="profil.html" class="btn btn-utama" style="margin-bottom: 30px;">Baca Selengkapnya</a>
               </article>
-            </div>			
+            </div>		
 
             <div class="col-md-6 mr-none">
               <article class="post" style="text-align:justify">

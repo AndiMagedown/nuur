@@ -352,6 +352,12 @@ img {
   font-weight: 600;
   margin-top: 16px;
 }
+.tombol-berita a {
+  color: #000000 !important;
+  font-weight: 500;
+  font-size: 15px;
+  text-decoration: none !important;
+}
 
 @media (max-width: 700px) {
   .berita .row {

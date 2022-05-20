@@ -4,7 +4,7 @@
     
 <body>
 <div class="wrapper">
-  <div class="logo"><img src="img/Logo-Masjid.png" alt="" /></div>
+  <div class="logo"><img src="img/Logo-Masjid.png" alt=""></div>
   <div class="text-center mt-4 name">Masjid An-Nuur Minomartani</div>
   <form class="p-3 mt-3">
     <div class="form-field d-flex align-items-center"><span class="far fa-user"></span> <input type="text" name="userName" id="userName" placeholder="Username" /></div>
